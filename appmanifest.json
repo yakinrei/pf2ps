@@ -1,7 +1,7 @@
 {
 	"name": "PF2_Party",
 	"short_name": "PF2_Party",
-	"description": "It's not a game. is a RPC Tool. For DM's sake, a party sheet with conditions, inventory and spell sloots tracker. Save e Load, possibility of changes values of the attributes.",
+	"description": "",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
