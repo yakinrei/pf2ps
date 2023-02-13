@@ -4560,7 +4560,7 @@ self.C3_ExpressionFuncs = [
 		() => "5px solid deeppink",
 		() => "5px solid orangered",
 		() => "font-size",
-		() => "x-large",
+		() => "large",
 		() => "font-family",
 		() => "Comic Sans MS",
 		() => "5px solid maroon",
@@ -4636,7 +4636,6 @@ self.C3_ExpressionFuncs = [
 			return () => (n0.ExpObject() + 350);
 		},
 		() => "10px solid darkred",
-		() => "xxx-large",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 350);
