@@ -1,0 +1,36 @@
+{
+	"name": "PF2_Party",
+	"version": "1.7",
+	"description": "",
+	"id": "com.mycompany.myapp",
+	"unique-id": "2m2oqhlgof90t",
+	"viewport-width": 1280,
+	"viewport-height": 720,
+	"author": "PVGA",
+	"email": "",
+	"website": "http://",
+	"orientations": "landscape",
+	"c2version": "244",
+	"c3version": "r327.2",
+	"ife": true,
+	"used-plugins": [
+		"Sprite",
+		"Text",
+		"Touch",
+		"BinaryData",
+		"LocalStorage",
+		"filechooser",
+		"TextBox",
+		"List",
+		"Button",
+		"Keyboard",
+		"AJAX",
+		"TiledBg",
+		"Json"
+	],
+	"used-behaviors": [
+		"solid",
+		"scrollto",
+		"Persist"
+	]
+}
