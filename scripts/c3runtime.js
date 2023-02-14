@@ -4111,14 +4111,23 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.TiledBg,
 		C3.Plugins.Json,
 		C3.Behaviors.Persist,
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Text.Acts.SetPos,
+		C3.Plugins.Sprite.Exps.X,
+		C3.Plugins.Sprite.Exps.Y,
+		C3.Plugins.TextBox.Acts.SetCSSStyle,
+		C3.Plugins.List.Acts.SetCSSStyle,
+		C3.Plugins.TextBox.Acts.SetPos,
+		C3.Plugins.List.Acts.SetPos,
+		C3.Plugins.System.Cnds.ForEach,
+		C3.Plugins.Text.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGestureObject,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.SetVar,
-		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.Plugins.Text.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Text.Cnds.CompareY,
 		C3.Plugins.Text.Acts.SetPosToObject,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
@@ -4127,8 +4136,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.Text.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Exps.AnimationFrame,
-		C3.Plugins.Text.Acts.SetPos,
-		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Sprite.Acts.StopAnim,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Text.Acts.SetInstanceVar,
@@ -4144,8 +4151,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.LoadURL,
 		C3.Plugins.Text.Acts.SubInstanceVar,
 		C3.Plugins.Text.Acts.AddInstanceVar,
-		C3.Plugins.TextBox.Acts.SetCSSStyle,
-		C3.Plugins.List.Acts.SetCSSStyle,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.List.Exps.SelectedIndex,
 		C3.Plugins.System.Acts.GoToLayout,
@@ -4154,19 +4159,16 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.Sprite.Acts.SetY,
-		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Touch.Exps.Y,
 		C3.Plugins.Sprite.Cnds.CompareY,
 		C3.Plugins.System.Acts.LoadState,
 		C3.Plugins.Text.Acts.Destroy,
 		C3.Plugins.TextBox.Cnds.IsVisible,
 		C3.Plugins.TextBox.Acts.Destroy,
-		C3.Plugins.TextBox.Acts.SetPos,
 		C3.Plugins.Text.Exps.X,
 		C3.Plugins.Text.Exps.Y,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.TextBox.Acts.SetVisible,
-		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Acts.SaveState,
@@ -4252,14 +4254,14 @@ self.C3_JsPropNameTable = [
 	{inf: 0},
 	{infMax: 0},
 	{Portatre: 0},
-	{token_: 0},
-	{token_3: 0},
-	{token_83Cópia: 0},
-	{token_34Cópia: 0},
-	{token_45Cópia: 0},
-	{token_54Cópia: 0},
-	{token_64Cópia: 0},
-	{token_4: 0},
+	{dc_t: 0},
+	{fort_t: 0},
+	{hp_t: 0},
+	{ref_t: 0},
+	{von_t: 0},
+	{ac_t: 0},
+	{furt_t: 0},
+	{perc_t: 0},
 	{Valor: 0},
 	{extra: 0},
 	{spellslot: 0},
@@ -4482,6 +4484,140 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => v0.GetValue();
+		},
+		() => 1,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 100);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject();
+		},
+		() => 3,
+		() => "border",
+		() => "5px solid darkmagenta",
+		() => "5px solid darkgreen",
+		() => "5px solid deeppink",
+		() => "5px solid orangered",
+		() => "font-size",
+		() => "medium",
+		() => "font-family",
+		() => "Comic Sans MS",
+		() => "5px solid maroon",
+		() => "5px solid silver",
+		() => "5px solid darkgoldenrod",
+		() => "5px solid gainsboro",
+		() => "5px solid saddlebrown",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 200);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 515);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 175);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 275);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 35);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 425);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 310);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 195);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 75);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 25);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 50);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 25);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 15);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 150);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 350);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 15);
+		},
+		() => 4,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 450);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 10);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 575);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 725);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 850);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 1000);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 1125);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 160);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 300);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 425);
+		},
+		() => 2000,
 		() => 2,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -4489,10 +4625,6 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			const n3 = p._GetNode(3);
 			return () => ((Math.floor((v0.GetValue() / Math.pow(100, (9 - n1.ExpInstVar_Family())))) * 100) + Math.floor((v2.GetValue() % Math.pow(100, (8 - n3.ExpInstVar_Family())))));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
 		},
 		() => 0,
 		() => 99999999999999,
@@ -4508,10 +4640,6 @@ self.C3_ExpressionFuncs = [
 			return () => (Math.floor((v0.GetValue() / Math.pow(100, (8 - n1.ExpInstVar_Family())))) % 100);
 		},
 		() => 64,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject();
-		},
 		() => 475,
 		() => 415,
 		p => {
@@ -4552,22 +4680,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
-		() => 1,
-		() => 3,
-		() => "border",
-		() => "5px solid darkmagenta",
-		() => "5px solid darkgreen",
-		() => "5px solid deeppink",
-		() => "5px solid orangered",
-		() => "font-size",
-		() => "large",
-		() => "font-family",
-		() => "Comic Sans MS",
-		() => "5px solid maroon",
-		() => "5px solid silver",
-		() => "5px solid darkgoldenrod",
-		() => "5px solid gainsboro",
-		() => "5px solid saddlebrown",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
@@ -4600,7 +4712,6 @@ self.C3_ExpressionFuncs = [
 		() => 450,
 		() => 555,
 		() => 660,
-		() => 4,
 		() => 5,
 		() => 640,
 		() => 360,
@@ -4622,7 +4733,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "- Party Name  -",
 		() => 532,
-		() => 2000,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 300);
@@ -4631,11 +4741,8 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 50);
 		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 350);
-		},
 		() => "10px solid darkred",
+		() => "large",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 350);
