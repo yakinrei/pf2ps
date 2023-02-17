@@ -4116,6 +4116,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Acts.SetPos,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
+		C3.Plugins.Text.Acts.SetFontSize,
 		C3.Plugins.TextBox.Acts.SetCSSStyle,
 		C3.Plugins.List.Acts.SetCSSStyle,
 		C3.Plugins.TextBox.Acts.SetPos,
@@ -4257,14 +4258,24 @@ self.C3_JsPropNameTable = [
 	{infMax: 0},
 	{HeroPoint: 0},
 	{BattleMedicine: 0},
-	{nivel: 0},
-	{str: 0},
-	{dex: 0},
-	{con: 0},
-	{int: 0},
-	{sab: 0},
-	{car: 0},
+	{Acr: 0},
+	{Atl: 0},
+	{Arc: 0},
+	{Dip: 0},
+	{Dis: 0},
+	{Inti: 0},
+	{Lad: 0},
 	{ativahp: 0},
+	{Man: 0},
+	{Med: 0},
+	{Nat: 0},
+	{Ocu: 0},
+	{Perf: 0},
+	{Rel: 0},
+	{Sab1: 0},
+	{Sab2: 0},
+	{Soc: 0},
+	{Sob: 0},
 	{Portatre: 0},
 	{dc_t: 0},
 	{fort_t: 0},
@@ -4384,10 +4395,13 @@ self.C3_JsPropNameTable = [
 	{Heroic: 0},
 	{reaction: 0},
 	{del: 0},
-	{token_13: 0},
 	{Conddesc: 0},
 	{ssM12: 0},
 	{ss12: 0},
+	{skills: 0},
+	{Stealth2: 0},
+	{Per: 0},
+	{Acr11: 0},
 	{Persistir: 0},
 	{Dados: 0},
 	{img: 0},
@@ -4510,6 +4524,53 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
+		() => 48,
+		() => 9,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 525);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 310);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 246);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 182);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 118);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 54);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 10);
+		},
+		() => 36,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 74);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 138);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 202);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 100);
+		},
 		() => 3,
 		() => "border",
 		() => "5px solid darkmagenta",
@@ -4551,10 +4612,6 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() - 310);
-		},
-		p => {
-			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 195);
 		},
 		p => {
@@ -4593,10 +4650,6 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() + 450);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 10);
 		},
 		p => {
 			const n0 = p._GetNode(0);
