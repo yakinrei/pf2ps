@@ -4137,6 +4137,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Exps.AnimationFrame,
 		C3.Plugins.Sprite.Acts.StopAnim,
+		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Text.Acts.SetInstanceVar,
 		C3.Plugins.List.Acts.Select,
@@ -4149,6 +4150,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.filechooser.Exps.FileURLAt,
 		C3.Plugins.Sprite.Acts.LoadURL,
+		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Text.Acts.SubInstanceVar,
 		C3.Plugins.Text.Acts.AddInstanceVar,
 		C3.Plugins.System.Exps.int,
@@ -4177,7 +4179,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.ForEachOrdered,
 		C3.Plugins.LocalStorage.Acts.GetBinaryItem,
 		C3.Plugins.BinaryData.Exps.GetURL,
-		C3.Plugins.Sprite.Acts.SetOpacity
+		C3.Plugins.Sprite.Acts.ToggleBoolInstanceVar
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4247,12 +4249,22 @@ self.C3_JsPropNameTable = [
 	{SLOTNAME: 0},
 	{slotnumber: 0},
 	{Fate: 0},
-	{ativa: 0},
+	{ativabm: 0},
 	{Condition: 0},
 	{ncond: 0},
 	{CONDSET: 0},
 	{inf: 0},
 	{infMax: 0},
+	{HeroPoint: 0},
+	{BattleMedicine: 0},
+	{nivel: 0},
+	{str: 0},
+	{dex: 0},
+	{con: 0},
+	{int: 0},
+	{sab: 0},
+	{car: 0},
+	{ativahp: 0},
 	{Portatre: 0},
 	{dc_t: 0},
 	{fort_t: 0},
@@ -4367,6 +4379,7 @@ self.C3_JsPropNameTable = [
 	{PartyName3: 0},
 	{savename: 0},
 	{returnarrow: 0},
+	{ativa: 0},
 	{deletar: 0},
 	{Heroic: 0},
 	{reaction: 0},
@@ -4648,6 +4661,14 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
+			return () => (50 + (50 * n0.ExpInstVar_Family()));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (50 + (505 * n0.ExpInstVar_Family()));
+		},
+		p => {
+			const n0 = p._GetNode(0);
 			return () => and(n0.ExpInstVar_Family(), "B");
 		},
 		p => {
@@ -4769,14 +4790,6 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpInstVar_Family() + "icon");
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (75 + (25 * n0.ExpInstVar_Family()));
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpInstVar_Family() * (-1));
 		}
 ];
 
